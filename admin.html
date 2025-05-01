@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель администратора - MediTour</title>
+    <meta name="description" content="Административная панель для управления сайтом медицинского туризма MediTour.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="admin-header-content">
+                <div class="logo">
+                    <a href="index.html" class="logo-text"><span class="primary">Medi</span><span class="secondary">Tour</span> Admin</a>
+                </div>
+                
+                <div id="admin-username" class="admin-username">
+                    <i class="fas fa-user-circle"></i> <span>Администратор</span>
+                </div>
+                
+                <button id="logout-btn" class="btn btn-outline admin-logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Выйти
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Контейнер авторизации -->
+    <div id="login-container" class="admin-container">
+        <div class="container">
+            <div class="admin-login-card">
+                <div class="admin-login-header">
+                    <h1 class="admin-login-title">Вход в панель администратора</h1>
+                    <p class="admin-login-subtitle">Введите ваши учетные данные для доступа к административной панели</p>
+                </div>
+                
+                <form id="login-form" class="admin-login-form">
+                    <div class="form-group">
+                        <label for="username" class="form-label">Имя пользователя</label>
+                        <div class="form-input-group">
+                            <span class="form-input-icon"><i class="fas fa-user"></i></span>
+                            <input type="text" id="username" class="form-control admin-input" placeholder="Введите имя пользователя" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">Пароль</label>
+                        <div class="form-input-group">
+                            <span class="form-input-icon"><i class="fas fa-lock"></i></span>
+                            <input type="password" id="password" class="form-control admin-input" placeholder="Введите пароль" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Запомнить меня</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Войти</button>
+                </form>
+                
+                <div class="admin-login-footer">
+                    <a href="#" class="forgot-password">Забыли пароль?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной контейнер администратора -->
+    <div id="admin-container" class="admin-container hidden">
+        <div class="container">
+            <div class="admin-sidebar">
+                <ul class="admin-nav">
+                    <li class="admin-nav-item">
+                        <a href="#dashboard" class="admin-tab-link active" data-tab="dashboard-tab">
+                            <i class="fas fa-tachometer-alt"></i> Дашборд
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a href="#news" class="admin-tab-link" data-tab="news-tab">
+                            <i class="fas fa-newspaper"></i> Новости
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a href="#services" class="admin-tab-link" data-tab="services-tab">
+                            <i class="fas fa-stethoscope"></i> Услуги
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a href="#locations" class="admin-tab-link" data-tab="locations-tab">
+                            <i class="fas fa-hospital"></i> Клиники
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a href="#partners" class="admin-tab-link" data-tab="partners-tab">
+                            <i class="fas fa-handshake"></i> Партнеры
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a href="#testimonials" class="admin-tab-link" data-tab="testimonials-tab">
+                            <i class="fas fa-comments"></i> Отзывы
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a href="#requests" class="admin-tab-link" data-tab="requests-tab">
+                            <i class="fas fa-clipboard-list"></i> Заявки
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a href="#settings" class="admin-tab-link" data-tab="settings-tab">
+                            <i class="fas fa-cog"></i> Настройки
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="admin-content">
+                <!-- Дашборд -->
+                <div id="dashboard-tab" class="admin-tab-content">
+                    <div class="admin-tab-header">
+                        <h2 class="admin-tab-title">Дашборд</h2>
+                        <p class="admin-tab-subtitle">Обзор основных показателей и статистики сайта</p>
+                    </div>
+                    
+                    <div class="admin-stats-grid">
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-icon bg-blue-light">
+                                <i class="fas fa-users text-blue"></i>
+                            </div>
+                            <div class="admin-stat-content">
+                                <div class="admin-stat-number">1,250</div>
+                                <div class="admin-stat-label">Посетителей за месяц</div>
+                            </div>
+                            <div class="admin-stat-change positive">
+                                <i class="fas fa-arrow-up"></i> 15%
+                            </div>
+                        </div>
+                        
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-icon bg-green-light">
+                                <i class="fas fa-clipboard-check text-green"></i>
+                            </div>
+                            <div class="admin-stat-content">
+                                <div class="admin-stat-number">85</div>
+                                <div class="admin-stat-label">Новых заявок</div>
+                            </div>
+                            <div class="admin-stat-change positive">
+                                <i class="fas fa-arrow-up"></i> 8%
+                            </div>
+                        </div>
+                        
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-icon bg-purple-light">
+                                <i class="fas fa-newspaper text-purple"></i>
+                            </div>
+                            <div class="admin-stat-content">
+                                <div class="admin-stat-number">24</div>
+                                <div class="admin-stat-label">Опубликовано новостей</div>
+                            </div>
+                            <div class="admin-stat-change positive">
+                                <i class="fas fa-arrow-up"></i> 12%
+                            </div>
+                        </div>
+                        
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-icon bg-orange-light">
+                                <i class="fas fa-star text-orange"></i>
+                            </div>
+                            <div class="admin-stat-content">
+                                <div class="admin-stat-number">4.8</div>
+                                <div class="admin-stat-label">Средняя оценка</div>
+                            </div>
+                            <div class="admin-stat-change positive">
+                                <i class="fas fa-arrow-up"></i> 3%
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-dashboard-row">
+                        <div class="admin-card admin-chart-card">
+                            <div class="admin-card-header">
+                                <h3 class="admin-card-title">Посещаемость сайта</h3>
+                                <div class="admin-card-actions">
+                                    <select class="admin-select">
+                                        <option value="week">Неделя</option>
+                                        <option value="month" selected>Месяц</option>
+                                        <option value="year">Год</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="admin-card-body">
+                                <canvas id="visitors-chart" height="250"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="admin-card admin-chart-card">
+                            <div class="admin-card-header">
+                                <h3 class="admin-card-title">Источники посетителей</h3>
+                                <div class="admin-card-actions">
+                                    <select class="admin-select">
+                                        <option value="week">Неделя</option>
+                                        <option value="month" selected>Месяц</option>
+                                        <option value="year">Год</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="admin-card-body">
+                                <canvas id="sources-chart" height="250"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-dashboard-row">
+                        <div class="admin-card">
+                            <div class="admin-card-header">
+                                <h3 class="admin-card-title">Последние заявки</h3>
+                                <a href="#requests" class="admin-card-link">Смотреть все</a>
+                            </div>
+                            <div class="admin-card-body">
+                                <div class="admin-table-container">
+                                    <table class="admin-table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Имя</th>
+                                                <th>Услуга</th>
+                                                <th>Дата</th>
+                                                <th>Статус</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#1245</td>
+                                                <td>Алексей Петров</td>
+                                                <td>Кардиология</td>
+                                                <td>15.04.2025</td>
+                                                <td><span class="status-badge status-new">Новая</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>#1244</td>
+                                                <td>Елена Иванова</td>
+                                                <td>Стоматология</td>
+                                                <td>14.04.2025</td>
+                                                <td><span class="status-badge status-in-progress">В обработке</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>#1243</td>
+                                                <td>Михаил Сидоров</td>
+                                                <td>Ортопедия</td>
+                                                <td>14.04.2025</td>
+                                                <td><span class="status-badge status-completed">Завершена</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>#1242</td>
+                                                <td>Анна Кузнецова</td>
+                                                <td>Check-Up</td>
+                                                <td>13.04.2025</td>
+                                                <td><span class="status-badge status-completed">Завершена</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>#1241</td>
+                                                <td>Дмитрий Морозов</td>
+                                                <td>Пластическая хирургия</td>
+                                                <td>12.04.2025</td>
+                                                <td><span class="status-badge status-completed">Завершена</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>

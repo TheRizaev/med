@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клиники - Медицинский туризм в Узбекистане - MediTour</title>
+    <meta name="description" content="Лучшие клиники Узбекистана для иностранных пациентов. Современное оборудование, опытные врачи, высокое качество медицинских услуг.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-text"><span class="primary">Medi</span><span class="secondary">Tour</span></a>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Услуги</a></li>
+                    <li class="nav-item"><a href="locations.html" class="nav-link active">Клиники</a></li>
+                    <li class="nav-item"><a href="news.html" class="nav-link">Новости</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="uz">UZ</button>
+            </div>
+            
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Мобильное меню -->
+        <div class="mobile-menu">
+            <ul class="mobile-menu-list">
+                <li class="mobile-menu-item"><a href="index.html" class="mobile-menu-link">Главная</a></li>
+                <li class="mobile-menu-item"><a href="services.html" class="mobile-menu-link">Услуги</a></li>
+                <li class="mobile-menu-item"><a href="locations.html" class="mobile-menu-link active">Клиники</a></li>
+                <li class="mobile-menu-item"><a href="news.html" class="mobile-menu-link">Новости</a></li>
+                <li class="mobile-menu-item"><a href="#contact" class="mobile-menu-link">Контакты</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Баннер страницы -->
+    <section class="hero-small">
+        <div class="container">
+            <h1 class="hero-small-title fade-in">Наши клиники</h1>
+            <p class="hero-small-subtitle fade-in">Лучшие медицинские учреждения Узбекистана, сотрудничающие с нашей компанией</p>
+        </div>
+    </section>
+
+    <!-- Фильтр клиник -->
+    <section class="section filter-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group fade-in">
+                    <label for="city-filter" class="filter-label">Город:</label>
+                    <select id="city-filter" class="filter-select">
+                        <option value="all">Все города</option>
+                        <option value="tashkent">Ташкент</option>
+                        <option value="samarkand">Самарканд</option>
+                        <option value="bukhara">Бухара</option>
+                        <option value="other">Другие</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group fade-in delay-1">
+                    <label for="specialty-filter" class="filter-label">Специализация:</label>
+                    <select id="specialty-filter" class="filter-select">
+                        <option value="all">Все специализации</option>
+                        <option value="general">Многопрофильные</option>
+                        <option value="cardiology">Кардиология</option>
+                        <option value="oncology">Онкология</option>
+                        <option value="orthopedics">Ортопедия</option>
+                        <option value="neurology">Неврология</option>
+                        <option value="plastic">Пластическая хирургия</option>
+                        <option value="dental">Стоматология</option>
+                        <option value="rehabilitation">Реабилитация</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group fade-in delay-2">
+                    <button id="filter-button" class="btn btn-primary">Применить фильтры</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Список клиник -->
+    <section class="section locations-section">
+        <div class="container">
+            <div class="grid grid-3" id="locations-container">
+                <!-- Клиника 1 -->
+                <div class="card location-card fade-in" data-city="tashkent" data-specialty="general">
+                    <div class="image-zoom">
+                        <img src="img/locations/clinic-1.jpg" alt="Международный медицинский центр Ташкента" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="location-tags">
+                            <span class="location-tag">Ташкент</span>
+                            <span class="location-tag">Многопрофильная</span>
+                        </div>
+                        <h3 class="card-title">Международный медицинский центр Ташкента</h3>
+                        <p class="card-text">Современный многопрофильный медицинский центр, оснащенный новейшим оборудованием и предлагающий широкий спектр медицинских услуг.</p>
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-user-md"></i>
+                                <span>120+ специалистов</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-star"></i>
+                                <span>JCI аккредитация</span>
+                            </div>
+                        </div>
+                        <a href="clinic-detail.html?id=1" class="card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Клиника 2 -->
+                <div class="card location-card fade-in delay-1" data-city="tashkent" data-specialty="cardiology">
+                    <div class="image-zoom">
+                        <img src="img/locations/clinic-2.jpg" alt="Республиканский специализированный научно-практический медицинский центр кардиологии" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="location-tags">
+                            <span class="location-tag">Ташкент</span>
+                            <span class="location-tag">Кардиология</span>
+                        </div>
+                        <h3 class="card-title">Республиканский кардиологический центр</h3>
+                        <p class="card-text">Ведущий центр лечения сердечно-сосудистых заболеваний в Центральной Азии, проводящий все виды кардиохирургических операций.</p>
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-user-md"></i>
+                                <span>80+ специалистов</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-procedures"></i>
+                                <span>1500+ операций в год</span>
+                            </div>
+                        </div>
+                        <a href="clinic-detail.html?id=2" class="card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Клиника 3 -->
+                <div class="card location-card fade-in delay-2" data-city="tashkent" data-specialty="oncology">
+                    <div class="image-zoom">
+                        <img src="img/locations/clinic-3.jpg" alt="Республиканский онкологический научный центр" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="location-tags">
+                            <span class="location-tag">Ташкент</span>
+                            <span class="location-tag">Онкология</span>
+                        </div>
+                        <h3 class="card-title">Республиканский онкологический научный центр</h3>
+                        <p class="card-text">Специализированный центр диагностики и лечения онкологических заболеваний, оснащенный современным оборудованием для радиотерапии и химиотерапии.</p>
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-user-md"></i>
+                                <span>100+ специалистов</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-microscope"></i>
+                                <span>Современные методы лечения</span>
+                            </div>
+                        </div>
+                        <a href="clinic-detail.html?id=3" class="card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Клиника 4 -->
+                <div class="card location-card fade-in" data-city="tashkent" data-specialty="orthopedics">
+                    <div class="image-zoom">
+                        <img src="img/locations/clinic-4.jpg" alt="Центр ортопедии и травматологии" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="location-tags">
+                            <span class="location-tag">Ташкент</span>
+                            <span class="location-tag">Ортопедия</span>
+                        </div>
+                        <h3 class="card-title">Центр ортопедии и травматологии</h3>
+                        <p class="card-text">Специализированный центр лечения заболеваний опорно-двигательного аппарата, проводящий эндопротезирование суставов и сложные реконструктивные операции.</p>
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-user-md"></i>
+                                <span>50+ специалистов</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-walking"></i>
+                                <span>Современная реабилитация</span>
+                            </div>
+                        </div>
+                        <a href="clinic-detail.html?id=4" class="card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Клиника 5 -->
+                <div class="card location-card fade-in delay-1" data-city="samarkand" data-specialty="general">
+                    <div class="image-zoom">
+                        <img src="img/locations/clinic-5.jpg" alt="Самаркандский медицинский центр" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="location-tags">
+                            <span class="location-tag">Самарканд</span>
+                            <span class="location-tag">Многопрофильная</span>
+                        </div>
+                        <h3 class="card-title">Самаркандский медицинский центр</h3>
+                        <p class="card-text">Крупный многопрофильный медицинский центр, оказывающий полный спектр медицинских услуг в историческом городе Самарканд.</p>
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-user-md"></i>
+                                <span>70+ специалистов</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-globe"></i>
+                                <span>Международные стандарты</span>
+                            </div>
+                        </div>
+                        <a href="clinic-detail.html?id=5" class="card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Клиника 6 -->
+                <div class="card location-card fade-in delay-2" data-city="bukhara" data-specialty="rehabilitation">
+                    <div class="image-zoom">
+                        <img src="img/locations/clinic-6.jpg" alt="Бухарский центр реабилитации" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="location-tags">
+                            <span class="location-tag">Бухара</span>
+                            <span class="location-tag">Реабилитация</span>
+                        </div>
+                        <h3 class="card-title">Бухарский центр реабилитации</h3>
+                        <p class="card-text">Специализированный центр реабилитации, сочетающий современные методы восстановления с традиционными практиками в историческом городе Бухара.</p>
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-user-md"></i>
+                                <span>40+ специалистов</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-spa"></i>
+                                <span>Уникальные методики</span>
+                            </div>
+                        </div>
+                        <a href="clinic-detail.html?id=6" class="card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Клиника 7 -->
+                <div class="card location-card fade-in" data-city="tashkent" data-specialty="dental">
+                    <div class="image-zoom">
+                        <img src="img/locations/clinic-7.jpg" alt="Центр современной стоматологии" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="location-tags">
+                            <span class="location-tag">Ташкент</span>
+                            <span class="location-tag">Стоматология</span>
+                        </div>
+                        <h3 class="card-title">Центр современной стоматологии</h3>
+                        <p class="card-text">Передовая стоматологическая клиника, предлагающая полный спектр услуг – от профилактики до сложного протезирования и имплантологии.</p>
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-user-md"></i>
+                                <span>30+ специалистов</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-tooth"></i>
+                                <span>Цифровые технологии</span>
+                            </div>
+                        </div>
+                        <a href="clinic-detail.html?id=7" class="card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Клиника 8 -->
+                <div class="card location-card fade-in delay-1" data-city="tashkent" data-specialty="plastic">
+                    <div class="image-zoom">
+                        <img src="img/locations/clinic-8.jpg" alt="Институт красоты и пластической хирургии" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="location-tags">
+                            <span class="location-tag">Ташкент</span>
+                            <span class="location-tag">Пластическая хирургия</span>
+                        </div>
+                        <h3 class="card-title">Институт красоты и пластической хирургии</h3>
+                        <p class="card-text">Специализированная клиника, предлагающая все виды эстетических и реконструктивных пластических операций с использованием современных технологий.</p>
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-user-md"></i>
+                                <span>25+ специалистов</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-award"></i>
+                                <span>Международные сертификаты</span>
+                            </div>
+                        </div>
+                        <a href="clinic-detail.html?id=8" class="card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Клиника 9 -->
+                <div class="card location-card fade-in delay-2" data-city="samarkand" data-specialty="neurology">
+                    <div class="image-zoom">
+                        <img src="img/locations/clinic-9.jpg" alt="Неврологический центр Самарканда" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="location-tags">
+                            <span class="location-tag">Самарканд</span>
+                            <span class="location-tag">Неврология</span>
+                        </div>
+                        <h3 class="card-title">Неврологический центр Самарканда</h3>
+                        <p class="card-text">Специализированный центр диагностики и лечения заболеваний нервной системы, оснащенный современным диагностическим оборудованием.</p>
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-user-md"></i>
+                                <span>35+ специалистов</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-brain"></i>
+                                <span>Инновационные методики</span>
+                            </div>
+                        </div>
+                        <a href="clinic-detail.html?id=9" class="card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Пагинация -->
+            <div class="pagination fade-in">
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn pagination-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Карта клиник -->
+    <section class="section map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">Наши клиники на карте</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle fade-in">Расположение медицинских учреждений, сотрудничающих с MediTour в Узбекистане</p>
+            </div>
+            
+            <div class="map-container fade-in">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191885.5017522578!2d69.13928195902357!3d41.2994958090329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2sTashkent%2C%20Uzbekistan!5e0!3m2!1sen!2sus!4v1620571893703!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA секция -->
+    <section class="section cta">
+        <div class="container">
+            <h2 class="cta-title fade-in">Нужна помощь в выборе клиники?</h2>
+            <p class="cta-text fade-in">Свяжитесь с нами сегодня для бесплатной консультации и подбора оптимального варианта лечения в соответствии с вашими потребностями.</p>
+            <a href="#contact" class="btn btn-primary btn-ripple fade-in">Связаться с нами</a>
+        </div>
+    </section>
+
+    <!-- Контактная форма -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">Связаться с нами</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle fade-in">Заполните форму ниже, чтобы получить бесплатную консультацию или задать вопрос.</p>
+            </div>
+            
+            <div class="contact-form-container">
+                <div class="contact-info slide-in-left">
+                    <h3>Контактная информация</h3>
+                    <p>Мы всегда рады помочь вам и ответить на все ваши вопросы о медицинском туризме в Узбекистане.</p>
+                    
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Адрес</h4>
+                                <p>г. Ташкент, ул. Амира Темура, 107Б</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p>+998 71 123-45-67</p>
+                                <p>+998 90 123-45-67</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@meditour.uz</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Часы работы</h4>
+                                <p>Пн-Пт: 9:00 - 18:00</p>
+                                <p>Сб: 10:00 - 15:00</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form slide-in-right">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Ваше имя *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Телефон *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service" class="form-label">Интересующая клиника</label>
+                            <select id="service" class="form-control">
+                                <option value="">Выберите клинику</option>
+                                <option value="clinic1">Международный медицинский центр Ташкента</option>
+                                <option value="clinic2">Республиканский кардиологический центр</option>
+                                <option value="clinic3">Республиканский онкологический научный центр</option>
+                                <option value="other">Другая</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Сообщение *</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group form-checkbox">
+                            <input type="checkbox" id="consent" required>
+                            <label for="consent">Я согласен на обработку персональных данных</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-ripple">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html" class="logo-text"><span class="primary">Medi</span><span class="secondary">Tour</span></a>
+                    </div>
+                    <p class="footer-text">Мы специализируемся на организации медицинского туризма в Узбекистане, предлагая качественное лечение в лучших клиниках страны по доступным ценам.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Услуги</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#dental">Стоматология</a></li>
+                        <li><a href="services.html#plastic">Пластическая хирургия</a></li>
+                        <li><a href="services.html#orthopedics">Ортопедия</a></li>
+                        <li><a href="services.html#checkup">Диагностика</a></li>
+                        <li><a href="services.html#cardiology">Кардиология</a></li>
+                        <li><a href="services.html#spa">Санаторно-курортное лечение</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Полезные ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="locations.html">Клиники</a></li>
+                        <li><a href="news.html">Новости</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Контакты</h3>
+                    <ul class="footer-info">
+                        <li><i class="fas fa-map-marker-alt"></i> г. Ташкент, ул. Амира Темура, 107Б</li>
+                        <li><i class="fas fa-phone-alt"></i> +998 71 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@meditour.uz</li>
+                        <li><i class="fas fa-clock"></i> Пн-Пт: 9:00 - 18:00, Сб: 10:00 - 15:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MediTour. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/animations.js"></script>
+    <script type="module" src="js/news.js"></script>
+</body>
+</html>
