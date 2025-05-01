@@ -1,0 +1,653 @@
+/* 
+* Стили для адаптивной верстки сайта медицинского туризма в Узбекистане
+* MediTour - Узбекистан
+*/
+
+/* 
+* Точки останова (breakpoints):
+* 576px - Small (sm)
+* 768px - Medium (md)
+* 992px - Large (lg)
+* 1200px - Extra Large (xl)
+*/
+
+/* Общие адаптивные стили */
+img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  /* Extra Large устройства (большие десктопы, 1200px и выше) */
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+  
+  /* Large устройства (десктопы, 992px и выше) */
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .container {
+      max-width: 960px;
+    }
+    
+    h1 {
+      font-size: 2.25rem;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .section {
+      padding: 70px 0;
+    }
+  }
+  
+  /* Medium устройства (планшеты, 768px и выше) */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+      max-width: 720px;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    h2 {
+      font-size: 1.6rem;
+    }
+    
+    h3 {
+      font-size: 1.4rem;
+    }
+    
+    .hero-title {
+      font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+    
+    .section {
+      padding: 60px 0;
+    }
+    
+    .grid-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    
+    .footer-col:last-child {
+      margin-top: 30px;
+    }
+  }
+  
+  /* Small устройства (телефоны в ландшафтной ориентации, 576px и выше) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .container {
+      max-width: 540px;
+    }
+    
+    h1 {
+      font-size: 1.8rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+    }
+    
+    p {
+      font-size: 0.95rem;
+    }
+    
+    .section {
+      padding: 50px 0;
+    }
+    
+    .hero {
+      padding-top: calc(var(--header-height) + 60px);
+      padding-bottom: 60px;
+    }
+    
+    .hero-content {
+      flex-direction: column;
+    }
+    
+    .hero-text {
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .hero-image {
+      width: 100%;
+    }
+    
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+    
+    .grid-2, .grid-3, .grid-4 {
+      grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    .btn-group {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .btn {
+      width: 100%;
+    }
+    
+    .mobile-nav-toggle {
+      display: block;
+    }
+    
+    .nav {
+      display: none;
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      flex-direction: column;
+      padding: 20px 0;
+    }
+    
+    .nav.show {
+      display: flex;
+    }
+    
+    .nav-list {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .nav-item {
+      margin: 0;
+      width: 100%;
+      text-align: center;
+      padding: 12px 0;
+    }
+    
+    .feature-item {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .feature-icon {
+      margin: 0 auto 20px;
+    }
+  }
+  
+  /* Extra Small устройства (телефоны в портретной ориентации, до 576px) */
+  @media (max-width: 575.98px) {
+    .container {
+      width: 100%;
+      padding: 0 15px;
+    }
+    
+    h1 {
+      font-size: 1.7rem;
+    }
+    
+    h2 {
+      font-size: 1.4rem;
+    }
+    
+    h3 {
+      font-size: 1.2rem;
+    }
+    
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+    
+    .section {
+      padding: 40px 0;
+    }
+    
+    .section-header {
+      margin-bottom: 2rem;
+    }
+    
+    .hero {
+      padding-top: calc(var(--header-height) + 50px);
+      padding-bottom: 50px;
+    }
+    
+    .hero-content {
+      flex-direction: column;
+    }
+    
+    .hero-text {
+      width: 100%;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .hero-image {
+      width: 100%;
+    }
+    
+    .hero-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .grid {
+      gap: 1.5rem;
+    }
+    
+    .grid-2, .grid-3, .grid-4 {
+      grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    .footer {
+      padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-col {
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-bottom {
+      margin-top: 2rem;
+    }
+    
+    .btn-group {
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+    }
+    
+    .mobile-nav-toggle {
+      display: block;
+    }
+    
+    .nav {
+      display: none;
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      flex-direction: column;
+      padding: 20px 0;
+    }
+    
+    .nav.show {
+      display: flex;
+    }
+    
+    .nav-list {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .nav-item {
+      margin: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+    }
+    
+    .feature-item {
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .feature-icon {
+      margin: 0 auto 15px;
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+    }
+    
+    .feature-content h3 {
+      font-size: 1.1rem;
+    }
+    
+    .cta {
+      padding: 3rem 0;
+    }
+    
+    .cta-title {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    
+    .card-content {
+      padding: 1.2rem;
+    }
+    
+    .testimonial-item {
+      padding: 1.5rem;
+      margin: 0 0.5rem;
+    }
+    
+    .admin-card {
+      padding: 1.5rem;
+    }
+    
+    .table th, .table td {
+      padding: 0.75rem;
+    }
+  }
+  
+  /* Портретная ориентация на планшетах и ниже */
+  @media (max-width: 991.98px) {
+    .hero-content {
+      flex-direction: column;
+    }
+    
+    .hero-text, .hero-image {
+      width: 100%;
+    }
+    
+    .hero-text {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .btn-group {
+      justify-content: center;
+    }
+  }
+  
+  /* Ландшафтная ориентация на мобильных */
+  @media (max-height: 500px) and (max-width: 767.98px) {
+    .hero {
+      padding: calc(var(--header-height) + 30px) 0 30px;
+    }
+    
+    .section {
+      padding: 30px 0;
+    }
+    
+    .hero-title {
+      font-size: 1.8rem;
+    }
+  }
+  
+  /* Фиксы для очень маленьких экранов */
+  @media (max-width: 360px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    h2 {
+      font-size: 1.3rem;
+    }
+    
+    .hero-title {
+      font-size: 1.6rem;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+    }
+  }
+  
+  /* Адаптивные стили для админ-панели */
+  @media (max-width: 767.98px) {
+    .admin-card-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .admin-card-header .btn {
+      margin-top: 1rem;
+      width: 100%;
+    }
+    
+    .form-footer {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .form-footer .btn {
+      width: 100%;
+    }
+    
+    .table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    
+    .admin-form {
+      padding: 0;
+    }
+  }
+  
+  /* Адаптивные стили для мобильного меню */
+  @media (max-width: 767.98px) {
+    .header-container {
+      padding: 0 15px;
+    }
+    
+    .mobile-menu {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      width: 100%;
+      background-color: white;
+      z-index: 999;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .mobile-menu.open {
+      max-height: 300px;
+      padding: 15px 0;
+    }
+    
+    .mobile-menu-list {
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px;
+    }
+    
+    .mobile-menu-item {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+    
+    .mobile-menu-item:last-child {
+      border-bottom: none;
+    }
+    
+    .mobile-menu-link {
+      display: block;
+      color: var(--dark-color);
+      font-weight: 500;
+    }
+    
+    .mobile-menu-link.active {
+      color: var(--primary-color);
+    }
+  }
+  
+  /* Адаптивные стили для карточек новостей */
+  @media (max-width: 767.98px) {
+    .news-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .news-image {
+      height: 200px;
+    }
+    
+    .news-content {
+      padding: 1.2rem;
+    }
+    
+    .news-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+  }
+  
+  /* Адаптивные стили для секции контактов */
+  @media (max-width: 767.98px) {
+    .contact-form-container {
+      flex-direction: column;
+    }
+    
+    .contact-info, .contact-form {
+      width: 100%;
+    }
+    
+    .contact-info {
+      margin-bottom: 2rem;
+    }
+    
+    .contact-form {
+      padding: 1.5rem;
+    }
+  }
+  
+  /* Адаптивные стили для карт */
+  @media (max-width: 767.98px) {
+    .map-container {
+      height: 300px;
+    }
+  }
+  
+  /* Адаптивные стили для галереи */
+  @media (max-width: 767.98px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 575.98px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Печатная версия */
+  @media print {
+    .header, .footer, .hero, .cta, .mobile-nav-toggle, .btn-group {
+      display: none !important;
+    }
+    
+    body {
+      font-size: 12pt;
+      color: #000;
+      background-color: #fff;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      page-break-after: avoid;
+      page-break-inside: avoid;
+    }
+    
+    img {
+      max-width: 100% !important;
+      page-break-inside: avoid;
+    }
+    
+    p, blockquote, ul, ol, dl, table {
+      page-break-inside: avoid;
+    }
+    
+    .section {
+      padding: 20px 0;
+      margin-bottom: 20px;
+      page-break-inside: avoid;
+    }
+    
+    .card, .news-item {
+      break-inside: avoid;
+      box-shadow: none;
+      border: 1px solid #ddd;
+    }
+  }
