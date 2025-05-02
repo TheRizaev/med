@@ -812,3 +812,333 @@ textarea.form-control {
 .hidden {
   display: none;
 }
+
+/* 
+* Header and Navigation Styles for MediTour Website
+* These styles should be added to the style.css file
+*/
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Logo styles */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo-text .primary {
+  color: var(--primary-color);
+}
+
+.logo-text .secondary {
+  color: var(--secondary-color);
+}
+
+/* Main Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-item {
+  margin-left: 2rem;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--gray-dark);
+  font-weight: 500;
+  padding: 5px 0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Language Dropdown */
+.lang-dropdown {
+  position: relative;
+  margin-left: 2rem;
+}
+
+.lang-dropdown-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--gray-dark);
+  font-weight: 500;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.lang-dropdown-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.lang-dropdown-btn .current-lang {
+  margin-right: 8px;
+}
+
+.lang-dropdown-btn i {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.lang-dropdown.active .lang-dropdown-btn i {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 150px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.lang-dropdown.active .lang-dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-option {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--gray-dark);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.lang-option:hover,
+.lang-option.active {
+  background-color: var(--gray-light);
+  color: var(--primary-color);
+}
+
+.lang-option.active {
+  font-weight: 600;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  z-index: 1010;
+  padding: 0;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--primary-color);
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.mobile-menu-toggle span:nth-child(1) {
+  top: 0px;
+}
+
+.mobile-menu-toggle span:nth-child(2) {
+  top: 10px;
+}
+
+.mobile-menu-toggle span:nth-child(3) {
+  top: 20px;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  top: 10px;
+  transform: rotate(135deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-135deg);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: white;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.open {
+  height: auto;
+  max-height: 100vh;
+  padding: 1.5rem 0;
+  overflow-y: auto;
+}
+
+.mobile-menu-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mobile-menu-item {
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--gray-dark);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link.active {
+  color: var(--primary-color);
+  background-color: var(--gray-light);
+}
+
+.mobile-lang-selector {
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--gray-light);
+}
+
+.mobile-lang-selector .lang-dropdown {
+  margin-left: 0;
+}
+
+.mobile-lang-selector .lang-dropdown-content {
+  position: static;
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  box-shadow: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: none;
+}
+
+.mobile-lang-selector .lang-dropdown.active .lang-dropdown-content {
+  display: block;
+}
+
+.mobile-lang-selector .lang-option {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.mobile-lang-selector .lang-option:last-child {
+  border-bottom: none;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .nav {
+    display: none;
+  }
+  
+  .lang-dropdown:not(.mobile-lang-selector .lang-dropdown) {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .header-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
